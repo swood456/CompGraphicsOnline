@@ -1,0 +1,58 @@
+
+<!-- saved from url=(0050)http://www.cs.unm.edu/~angel/WebGL/7E/03/cad1.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><script id="vertex-shader" type="x-shader/x-vertex">
+attribute vec4 vPosition;
+attribute vec4 vColor;
+
+varying vec4 fColor;
+
+void main()
+{
+    gl_Position = vPosition;
+    fColor = vColor;
+}
+</script>
+
+<script id="fragment-shader" type="x-shader/x-fragment">
+
+precision mediump float;
+
+varying vec4 fColor;
+void main()
+{
+    gl_FragColor = fColor;
+}
+</script>
+
+<script type="text/javascript" src="./cad1_files/webgl-utils.js"></script>
+<script type="text/javascript" src="./cad1_files/initShaders.js"></script>
+<script type="text/javascript" src="./cad1_files/MV.js"></script>
+<script type="text/javascript" src="./cad1_files/cad1.js"></script>
+
+<style type="text/css">
+    .colorBox {
+  float: left;
+  width: 20px;
+  height: 20px;
+  margin: 5px;
+  border: 1px solid rgba(0, 0, 0, .2);
+  background: #000000;
+}  
+
+</style>
+
+</head><body>
+<div>
+<canvas id="gl-canvas" width="512" height="512" >
+</canvas></div>
+
+
+R <input id="slider_r" type="range" min="0" max="100" step="1" value="0"> <br>
+G <input id="slider_g" type="range" min="0" max="100" step="1" value="0"> <br>
+B <input id="slider_b" type="range" min="0" max="100" step="1" value="0"> <br>
+
+
+<div class="colorBox" id="box"></div>
+
+
+</body></html>
